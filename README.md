@@ -2,6 +2,8 @@
 
 Simply adds `rem-base` and `rem-calc` functions to LESS.
 
+[![NPM](https://nodei.co/npm/less-plugin-remcalc.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/less-plugin-remcalc/)
+
 ## Installation
 
 ```
