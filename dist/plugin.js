@@ -88,9 +88,17 @@
 	            return base;
 	        },
 	        'rem-calc': function remCalc(value, base) {
+	            if (!value) {
+	                return new Dimension(0);
+	            }
+
 	            base = base || registry.get('rem-base')();
 	            var baseUnit = registry.get('get-unit')(base).value.backupUnit;
 	            base = registry.get('unit')(base).value;
+
+	            if (base === 0) {
+	                return new Dimension(value.value, 'px');
+	            }
 
 	            if (baseUnit === '%') {
 	                base = base / 100 * 16;
@@ -102,10 +110,6 @@
 
 	            if (baseUnit === 'em') {
 	                base *= 16;
-	            }
-
-	            if (!value) {
-	                return new Dimension(0);
 	            }
 
 	            var calculus = parseFloat((value.value / base).toFixed(3));
