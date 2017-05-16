@@ -1,7 +1,7 @@
 {
   "name": "less-plugin-remcalc",
   "description": " Simply adds rem-base and rem-calc functions to LESS",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/plugin.js",
   "license": "BSD-3-Clause",
   "scripts": {
