@@ -90,3 +90,23 @@ You can also act globally on the rem base, using:
   min-width: rem-calc(20px); // is now equivalent to rem-calc(20px, 10px);
 }
 ```
+
+If you set rem base to `0` - it will disable the conversion and 
+input value will be bypassed with pixels unit.
+
+```less
+@rem-base: rem-base(0); // disable globally
+
+.card {
+  min-width: rem-calc(20px); // output is 20px
+  min-width: rem-calc(20); // output is 20px
+  min-width: rem-calc(20px, 16px); // output is 1.25rem
+}
+```
+
+```less
+.card {
+  min-width: rem-calc(20px); // output is 1.25rem
+  min-width: rem-calc(20px, 0); // output is 20px (disable locally)
+}
+```
