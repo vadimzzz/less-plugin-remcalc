@@ -1,0 +1,17 @@
+@rem-base: rem-base(0); // disable conversion
+.borderline-cases {
+    failed-to-pass-parameter: rem-calc();
+}
+// these rules will be converted because they use custom base
+.with-custom-rem-base {
+    rem-calc-basic:        rem-calc(16px, 10px);
+    rem-calc-without-unit: rem-calc(32, 10);
+    rem-calc-with-rem:     rem-calc(16px, 1rem);
+    rem-calc-with-em:      rem-calc(16px, 1em);
+    rem-calc-with-ratio:   rem-calc(16px, 10%);
+}
+// these rules will be bypassed because they use default base
+.with-default-rem-base {
+    rem-calc-basic:        rem-calc(16px);
+    rem-calc-without-unit: rem-calc(32);
+}
